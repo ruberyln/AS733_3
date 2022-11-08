@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+
+
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+#version 300 es
+
+in  vec4 aPosition;
+in  vec4 aColor;
+out vec4 vColor;
+
+uniform mat4 uModelViewMatrix;
+uniform mat4 uProjectionMatrix;
+
+void main()
+{
+    gl_Position = uProjectionMatrix*uModelViewMatrix*aPosition;
+    vColor = aColor;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+#version 300 es
+
+precision mediump float;
+
+in vec4 vColor;
+out vec4 fColor;
+
+void
+main()
+{
+    fColor = vColor;
+}
+</script>
+
+<script type="text/javascript" src="../AS733_3/common/initShaders.js"></script>
+<script type="text/javascript" src="../AS733_3/common/MVne.js"></script>
+<script type="text/javascript" src="perspective.js"></script>
+
+<body>
+    <button class="btn btn-outline-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Click to view Operation Guidelines</button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Guidelines for interaction</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Perspective showing the inside of a cube with various colors.</p>
+
+        <p> To move the object farther and view shapes click "Farther button"</p>
+        <p> To move the object close and view shapes click "Nearer button"</p>
+        <p> To view a smaller version of object click "Smaller"</p>
+        <p> To view a bigger version of object click "Bigger"</p>
+        <p> To turn object in a anti-clockwwise manner "Anti-ClockWise Rotation" </p>
+        <p> To turn object in a clockwwise manner "ClockWise Rotation" </p>
+        <p> To rotate the object around towards you click "Rotate Forward button" </p>
+        <p> To rotate the object in an opposite direction click " Rotate Back button"</p>
+        
+    </p>
+  </div>
+</div>
+    <div> 
+        <center>
+<h4 > PERSPECTIVE FROM INSIDE A CUBE </h4>
+ 
+<canvas id="gl-canvas" width="512" height="512">
+</center>
+
+</canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<p> </p>
+ 
+<center>
+    <h6> Start Here</h6>
+<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+<input type="radio" class="btn-check" name="vbtn-radio" id="Radio1" autocomplete="off" checked>
+  <label class="btn btn-outline-danger" for="Radio1">Farther</label>
+
+  <input type="radio" class="btn-check" name="vbtn-radio" id="Radio2" autocomplete="off">
+  <label class="btn btn-outline-danger" for="Radio2">Nearer</label>
+
+</div>
+
+
+<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+    <input type="radio" class="btn-check" name="vbtn-radio" id="Radio3" autocomplete="off" >
+      <label class="btn btn-outline-info" for="Radio3">Smaller</label>
+    
+      <input type="radio" class="btn-check" name="vbtn-radio" id="Radio4" autocomplete="off">
+      <label class="btn btn-outline-info" for="Radio4">Bigger</label>
+    
+    </div>
+
+
+
+    <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+        <input type="radio" class="btn-check" name="vbtn-radio" id="Radio5" autocomplete="off" >
+          <label class="btn btn-outline-success" for="Radio5">Anti-ClockWise Rotation</label>
+        
+          <input type="radio" class="btn-check" name="vbtn-radio" id="Radio6" autocomplete="off">
+          <label class="btn btn-outline-success" for="Radio6">ClockWise Rotation</label>
+        
+        </div>
+
+
+
+    <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+        <input type="radio" class="btn-check" name="vbtn-radio" id="Radio7" autocomplete="off" >
+          <label class="btn btn-outline-primary" for="Radio7">Rotate Forward</label>
+        
+          <input type="radio" class="btn-check" name="vbtn-radio" id="Radio8" autocomplete="off">
+          <label class="btn btn-outline-primary" for="Radio8">Rotate Back</label>
+        
+        </div>
+    </center>
+
+
+
+</body>
+</html>
