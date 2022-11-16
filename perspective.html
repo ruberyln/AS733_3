@@ -71,8 +71,17 @@ main()
 </div>
     <div> 
         <center>
-<h4 > PERSPECTIVE FROM INSIDE A CUBE </h4>
- 
+<h4 > A DIFFERENT PERSPECTIVE  </h4>
+
+<label for="customRange1"  class="form-label">Reduce Object </label>
+<input type="range" class="form-range" id="customRange1" 
+min="0" max="100" step="10" value="100">
+
+<label for="customRange2"  class="form-label">Enlarge Object </label>
+<input type="range" class="form-range" id="customRange2" 
+min="0" max="100" step="10" value="10">
+
+
 <canvas id="gl-canvas" width="512" height="512">
 </center>
 
@@ -106,10 +115,10 @@ main()
 
     <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
         <input type="radio" class="btn-check" name="vbtn-radio" id="Radio5" autocomplete="off" >
-          <label class="btn btn-outline-success" for="Radio5">Anti-ClockWise Rotation</label>
+          <label class="btn btn-outline-success" for="Radio5">ClockWise Rotation</label>
         
           <input type="radio" class="btn-check" name="vbtn-radio" id="Radio6" autocomplete="off">
-          <label class="btn btn-outline-success" for="Radio6">ClockWise Rotation</label>
+          <label class="btn btn-outline-success" for="Radio6">Anti-ClockWise Rotation</label>
         
         </div>
 
@@ -126,6 +135,6 @@ main()
     </center>
 
 
-
+  
 </body>
 </html>

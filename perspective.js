@@ -21,14 +21,14 @@ var vertices = [
 ];
 
 var vertexColors = [
-    vec4(0.0, 0.0, 0.0, 1.0),  // black
-    vec4(1.0, 0.0, 0.0, 1.0),  // red
-    vec4(1.0, 1.0, 0.0, 1.0),  // yellow
-    vec4(0.0, 1.0, 0.0, 1.0),  // green
-    vec4(0.0, 0.0, 1.0, 1.0),  // blue
-    vec4(1.0, 0.0, 1.0, 1.0),  // magenta
-    vec4(0.0, 1.0, 1.0, 1.0),  // cyan
-    vec4(1.0, 1.0, 1.0, 1.0),  // white
+    vec4(1.0, 0.0, 0.0, 1.0), 
+    vec4(1.0, 1.0, 0.0, 1.0),  
+    vec4(0.0, 1.0, 0.0, 1.0),  
+    vec4(0.0, 1.0, 1.0, 1.0),  
+    vec4(1.0, 0.0, 0.0, 1.0),  
+    vec4(1.0, 0.0, 1.0, 1.0),  
+    vec4(1.0, 0.5, 1.0, 1.0),  
+    vec4(1.0, 1.0, 1.0, 1.0),  
 ];
 
 
@@ -128,6 +128,11 @@ window.onload = function init() {
     document.getElementById("Radio6").onclick = function(){theta -= dr;};
     document.getElementById("Radio7").onclick = function(){phi += dr;};
     document.getElementById("Radio8").onclick = function(){phi -= dr;};
+
+    document.getElementById("customRange1").onchange = function(){near  *= 1.1; far *= 1.1;};
+    document.getElementById("customRange2").onchange = function(){near *= 0.9; far *= 1.1;};
+  
+
 
     render();
 }
